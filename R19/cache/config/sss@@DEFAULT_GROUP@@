@@ -1,0 +1,25 @@
+{
+    "app":{
+        "Ip": "192.168.118.9",
+        "Port": "8080"
+    },
+     "Mysql":{
+        "Username": "root",
+        "Password": "111111",
+        "Host": "192.168.118.9",
+        "Port": "3306",
+        "Database": "demo"
+    },
+    "Redis":{
+        "Ip":"192.168.118.9",
+        "Port":6379
+    },
+    "Consul":{
+        "Ip":"192.168.118.9",
+        "Port":8500,
+        "SerivceName":"jsa",
+        "Wait":"?wait=14s",
+       "With" :"LoadBalancingPolicy",
+        "Service":"round_robin"
+    }
+}

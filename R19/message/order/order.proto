@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package order;
+option go_package="./order";
+
+message OrderInfo{
+  int64 Id =10;
+  string title =20;
+  string TotalPrice =30;
+  int64 TotalNumber=40;
+  string OrderNumber=50;
+
+}
+service Order {
+  rpc CreateOrder(CreateOrderRequest) returns(CreateOrderResponse);
+}
+message CreateOrderRequest {
+  OrderInfo OrderInfo = 1;
+}
+
+message CreateOrderResponse {
+  OrderInfo OrderInfo = 1;
+}

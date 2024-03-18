@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package goods;
+option go_package="./goods";
+
+message GoodsInfo{
+              int64    Id    =10;
+             string   Name  =20;
+             string   Price =30;
+             int64    Num   =40;
+}
+
+service Goods {
+  rpc Create(CreateRequest) returns(CreateResponse);
+  rpc Delete(DeleteRequest) returns(DeleteResponse);
+  rpc Update(UpdateRequest) returns(UpdateResponse);
+  rpc Select(SelectRequest) returns(SelectResponse);
+  rpc GetGoodsInfo(GetGoodsInfoRequest) returns(GetGoodsInfoResponse);
+}
+message GetGoodsInfoRequest{
+  int64 Offset =1;
+  int64 Limit=2;
+}
+message GetGoodsInfoResponse{
+ repeated   GoodsInfo Info =1;
+}
+message SelectRequest {
+  string Name = 1;
+}
+message SelectResponse {
+  GoodsInfo Info = 1;
+}
+message DeleteRequest {
+  int64 GoodsId = 1;
+}
+
+message DeleteResponse {
+}
+
+message UpdateRequest {
+  GoodsInfo Info = 1;
+}
+message UpdateResponse {
+  GoodsInfo Info = 1;
+}
+
+message CreateRequest {
+  GoodsInfo Info = 1;
+}
+
+
+message CreateResponse {
+  GoodsInfo Info = 1;
+}
