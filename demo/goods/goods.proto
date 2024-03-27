@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package goods;
+option go_package="./goods";
+
+
+service Goods {
+  rpc GetGoodsByIds(GetGoodsByIdsRequest) returns(GetGoodsByIdsResponse);
+  rpc UpdateStock(UpdateStockRequest) returns(UpdateStockResponse);
+}
+message GoodsInfo{
+  int64 ID      =10;
+  string Name   =20;
+  string Price  =30;
+  int64 Stock   =40;
+}
+message GetGoodsByIdsRequest {
+  repeated  int64  IDs  = 10;
+}
+
+message GetGoodsByIdsResponse {
+repeated   GoodsInfo Infos = 10;
+}
+message UpdateStockReq{
+  int64 ID =10;
+  int64 Num =20;
+}
+message UpdateStockRequest {
+  repeated  UpdateStockReq  GoodsInfos  = 10;
+}
+
+message UpdateStockResponse {
+repeated   GoodsInfo Infos = 10;
+}

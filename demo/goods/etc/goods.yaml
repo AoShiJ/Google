@@ -1,0 +1,12 @@
+Name: goods.rpc
+ListenOn: 0.0.0.0:8080
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: goods.rpc
+MysqlConf:
+  User: root
+  Password: 111111
+  Port: 3306
+  Host: 127.0.0.1
+  DataBaseName: demo

@@ -1,0 +1,12 @@
+Name: order.rpc
+ListenOn: 0.0.0.0:8081
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: order.rpc
+MysqlConf:
+  User: root
+  Password: 111111
+  Port: 3306
+  Host: 127.0.0.1
+  DataBaseName: demo

@@ -1,0 +1,30 @@
+syntax = "v1"
+
+type OrderNotifRequest {}
+
+type OrderNotifResponse {
+	Message string `json:"message"`
+}
+
+type Goods {
+	GoodID int64 `json:"good_id"`
+	Num    int64 `json:"num"`
+}
+
+type CreateOrderRequest {
+	UserID int64   `json:"user_id"`
+	Goods  []Goods `json:"goods"`
+}
+
+type CreateOrderResponse {
+	Url string `json:"url"`
+}
+
+service api-api {
+	@handler OrderNotif
+	post /order/notif (OrderNotifRequest) returns (OrderNotifResponse)
+
+	@handler OrderCreate
+	post /order/create (CreateOrderRequest) returns (CreateOrderResponse)
+}
+
